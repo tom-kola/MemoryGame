@@ -1,1 +1,281 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -250%);
+  }
+}
+.titleAnimation {
+  animation: titleAnimation 1s linear 1 both;
+}
+
+@keyframes cardsAnimation {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.cardAnimation {
+  animation: cardsAnimation 1s ease 1 both;
+}
+
+@keyframes rotateCard {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  51% {
+    transform: rotateY(90deg) scale(-1, 1);
+  }
+  100% {
+    transform: rotateY(180deg) scale(-1, 1);
+  }
+}
+.rotateCard {
+  animation: rotateCard 1s linear 1 both;
+}
+
+@keyframes rotateCardAgain {
+  0% {
+    transform: rotateY(180deg) scale(-1, 1);
+  }
+  50% {
+    transform: rotateY(90deg) scale(-1, 1);
+  }
+  51% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+.rotateCardAgain {
+  animation: rotateCardAgain 1s linear 1 both;
+}
+
+@keyframes becomeTransparent {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.becomeTransparent {
+  animation: becomeTransparent 0.5s linear 1 both;
+}
+
+.becomeOpaque {
+  animation: becomeTransparent 0.3s linear 1 reverse both;
+}
+
+@keyframes congratsTitleAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes returnBtnAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
+}
+#return:hover .fa-left-long {
+  animation: returnBtnAnimation 0.6s linear 1 both;
+}
+
+.covered {
+  background-image: url(../images/card-pattern3.jpg) !important;
+}
+
+html {
+  font-family: "Teko", sans-serif;
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 7rem;
+  color: rgb(247, 243, 231);
+  text-align: center;
+}
+
+h2 {
+  padding-top: 2em;
+  font-size: 5rem;
+  color: rgb(247, 243, 231);
+}
+
+h3 {
+  padding: 0.5em;
+  font-size: 3rem;
+  color: rgb(247, 243, 231);
+}
+
+p {
+  padding: 0.3em;
+  text-align: center;
+  font-weight: 700;
+}
+
+.mainTitle {
+  font-family: "Holtwood One SC", serif;
+  font-size: 6rem;
+}
+
+.congratsTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: congratsTitleAnimation 1s ease-in-out 1 both;
+}
+
+p.gold,
+h1.gold {
+  font-size: 3.6rem;
+  color: rgb(236, 201, 3);
+}
+
+p.silver,
+h1.silver {
+  font-size: 3rem;
+  color: rgb(173, 173, 173);
+}
+
+p.bronze,
+h1.bronze {
+  font-size: 2.4rem;
+  color: rgb(119, 48, 0);
+}
+
+p.txt,
+h1.txt {
+  font-size: 2rem;
+  color: rgb(247, 243, 231);
+}
+
+h1.trophy {
+  top: 70%;
+  padding-top: 1em;
+  font-size: 10rem;
+}
+
+.btn {
+  font-family: "Teko", sans-serif;
+  width: 10em;
+  height: 3em;
+  background-color: rgba(143, 59, 42, 0.877);
+  border-style: none;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(247, 243, 231);
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: rgb(102, 42, 30);
+}
+
+#newGame {
+  margin-right: 0.5em;
+}
+
+#results {
+  margin-left: 0.5em;
+}
+
+#return {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  transform: translateX(0);
+  padding: 0.4em;
+  font-size: 4rem;
+  color: rgb(247, 243, 231);
+  cursor: pointer;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-image: url(../images/background-wall.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wrapper .backgroundShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.wrapper .menu {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper .game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 8em 10em 0 10em;
+  width: 100%;
+}
+.wrapper .game .card {
+  flex-basis: 16%;
+  transform: scale(0) rotateY(0);
+  margin: 2em 3em;
+  padding: 8em;
+  border: 3px solid rgb(119, 119, 119);
+  border-radius: 1em;
+  box-shadow: 5px 5px 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.wrapper .resultsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+.wrapper .resultsSection .statistics {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.wrapper .hidden {
+  visibility: hidden;
+}
+.wrapper .unvisible {
+  display: none;
+}/*# sourceMappingURL=main.css.map */

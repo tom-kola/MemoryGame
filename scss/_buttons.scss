@@ -1,0 +1,18 @@
+@use "./mixins" as *;
+@use "./variables" as variable;
+
+.btn {
+	@include button;
+}
+.btn:hover {
+	background-color: variable.$button-hover-color;
+}
+#newGame {
+	margin-right: 0.5em;
+}
+#results {
+	margin-left: 0.5em;
+}
+#return {
+	@include returnBtn;
+}

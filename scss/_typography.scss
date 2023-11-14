@@ -1,0 +1,63 @@
+@use "./variables" as variable;
+@use "./animations" as *;
+
+html {
+	font-family: variable.$main-font-family;
+	font-size: 62.5%;
+}
+h1 {
+	font-size: variable.$h1-font-size;
+	color: variable.$main-font-color;
+	text-align: center;
+}
+h2 {
+	padding-top: 2em;
+	font-size: variable.$h2-font-size;
+	color: variable.$main-font-color;
+}
+h3 {
+	padding: 0.5em;
+	font-size: variable.$h3-font-size;
+	color: variable.$main-font-color;
+}
+p {
+	padding: 0.3em;
+	text-align: center;
+	font-weight: 700;
+}
+.mainTitle {
+	font-family: variable.$main-title-font-family;
+	font-size: variable.$main-title-font-size;
+}
+.congratsTitle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	animation: congratsTitleAnimation 1s ease-in-out 1 both;
+}
+p.gold,
+h1.gold {
+	font-size: 3.6rem;
+	color: variable.$first-place-font-color;
+}
+p.silver,
+h1.silver {
+	font-size: 3rem;
+	color: variable.$second-place-font-color;
+}
+p.bronze,
+h1.bronze {
+	font-size: 2.4rem;
+	color: variable.$third-place-font-color;
+}
+p.txt,
+h1.txt {
+	font-size: 2rem;
+	color: variable.$main-font-color;
+}
+h1.trophy {
+	top: 70%;
+	padding-top: 1em;
+	font-size: 10rem;
+}

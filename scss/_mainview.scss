@@ -1,0 +1,49 @@
+@use "./animations" as *;
+@use "./variables" as variable;
+@use "./mixins" as *;
+
+.wrapper {
+	min-height: 100vh;
+	background-image: variable.$main-background-image;
+	background-size: cover;
+	background-repeat: no-repeat;
+	.backgroundShadow {
+		@include backgroundShadow;
+	}
+	.menu {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.game {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		padding: 8em 10em 0 10em;
+		width: 100%;
+		.card {
+			@include card;
+		}
+	}
+	.resultsSection {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		opacity: 0;
+		.statistics {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+		}
+	}
+	.hidden {
+		visibility: hidden;
+	}
+
+	.unvisible {
+		display: none;
+	}
+}

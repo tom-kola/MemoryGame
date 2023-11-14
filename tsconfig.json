@@ -1,6 +1,8 @@
-{"compilerOptions":{
-  "rootDir": "./src",
-  "outDir": "./dist",
-  "target": "ES2015",
-  "module": "ES2015"
-}}
+{
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"target": "ES2016",
+		"module": "ES2015",
+	}
+}

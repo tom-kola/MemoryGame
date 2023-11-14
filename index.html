@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory</title>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/65449dedd2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-  <script type="module" src="./dist/app.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Memory</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Teko:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/65449dedd2.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="./css/main.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="backgroundShadow"></div>
+			<section class="menu">
+				<h1 class="mainTitle">Memory</h1>
+				<div class="buttons">
+					<button class="btn" id="newGame">Nowa gra</button>
+					<button class="btn" id="results">Wyniki</button>
+				</div>
+			</section>
+			<section class="resultsSection unvisible">
+				<h2>Wyniki</h2>
+				<div class="statistics">
+					<div class="place">
+						<h3>Miejsce</h3>
+					</div>
+					<div class="attempts">
+						<h3>Liczba prób</h3>
+					</div>
+				</div>
+			</section>
+			<p class="unvisible" id="return">
+				<i class="fa-solid fa-left-long"></i>
+			</p>
+		</div>
+		<script type="module" src="./dist/howler.js"></script>
+		<script type="module" src="./dist/app.js"></script>
+	</body>
 </html>
