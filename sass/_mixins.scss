@@ -1,11 +1,11 @@
 @use "./variables" as variable;
 
 @mixin card {
-	flex-basis: 16%;
+	flex-basis: 20%;
 	transform: scale(0) rotateY(0);
-	margin: 2em 3em;
-	padding: 8em;
-	border: 3px solid variable.$card-border-color;
+	margin: 1em;
+	padding: 2.4em;
+	border: 0.2em solid variable.$card-border-color;
 	border-radius: 1em;
 	box-shadow: 5px 5px 10px;
 	background-position: center;
@@ -14,11 +14,11 @@
 	cursor: pointer;
 }
 @mixin button {
-	font-family: variable.$main-font-family;
 	width: 10em;
 	height: 3em;
 	background-color: variable.$button-background-color;
 	border-style: none;
+	font-family: variable.$main-font-family;
 	font-size: variable.$button-font-size;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -29,8 +29,8 @@
 }
 @mixin returnBtn {
 	position: absolute;
-	top: 2%;
-	right: 2%;
+	top: 86%;
+	right: 3%;
 	transform: translateX(0);
 	padding: 0.4em;
 	font-size: variable.$return-btn-font-size;

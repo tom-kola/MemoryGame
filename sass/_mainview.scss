@@ -3,6 +3,9 @@
 @use "./mixins" as *;
 
 .wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
 	background-image: variable.$main-background-image;
 	background-size: cover;
@@ -15,13 +18,14 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+		padding-bottom: 0;
+		text-align: center;
 	}
 	.game {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
-		padding: 8em 10em 0 10em;
-		width: 100%;
+		justify-content: center;
+		max-width: 70%;
 		.card {
 			@include card;
 		}

@@ -1,0 +1,82 @@
+@use "./mixins" as *;
+@use "./variables" as variable;
+@use "./mainview" as *;
+
+@media (min-width: 572px) {
+	.wrapper {
+		.game {
+			.card {
+				padding: 3.6em;
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.wrapper {
+		.game {
+			.card {
+				padding: 4.6em;
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.wrapper {
+		.game {
+			.card {
+				padding: 6em;
+			}
+		}
+	}
+	.mainTitle {
+		font-size: 6rem;
+	}
+	h2 {
+		font-size: 5.6rem;
+	}
+	h3 {
+		font-size: 4rem;
+	}
+	.btn {
+		font-size: 2.4rem;
+	}
+	#return {
+		font-size: 4rem;
+	}
+	p.gold,
+	h1.gold {
+		font-size: 4rem;
+	}
+	p.silver,
+	h1.silver {
+		font-size: 3.4rem;
+	}
+	p.bronze,
+	h1.bronze {
+		font-size: 2.8rem;
+	}
+	p.txt,
+	h1.txt {
+		font-size: 2.4rem;
+	}
+}
+@media (min-width: 1024px) and (orientation: portrait) {
+	.wrapper {
+		.game {
+			.card {
+				margin: 2em;
+				padding: 7em;
+			}
+		}
+	}
+}
+@media (min-width: 1400px) {
+	.wrapper {
+		.game {
+			.card {
+        margin: 1.6rem;
+				padding: 8em;
+			}
+		}
+	}
+}

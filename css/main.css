@@ -6,10 +6,10 @@
 
 @keyframes titleAnimation {
   0% {
-    transform: translate(-50%, -50%);
+    top: 50%;
   }
   100% {
-    transform: translate(-50%, -250%);
+    top: 10%;
   }
 }
 .titleAnimation {
@@ -116,20 +116,20 @@ html {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 3.9rem;
   color: rgb(247, 243, 231);
   text-align: center;
 }
 
 h2 {
   padding-top: 2em;
-  font-size: 5rem;
+  font-size: 3.4rem;
   color: rgb(247, 243, 231);
 }
 
 h3 {
   padding: 0.5em;
-  font-size: 3rem;
+  font-size: 2rem;
   color: rgb(247, 243, 231);
 }
 
@@ -141,7 +141,7 @@ p {
 
 .mainTitle {
   font-family: "Holtwood One SC", serif;
-  font-size: 6rem;
+  font-size: 3.9rem;
 }
 
 .congratsTitle {
@@ -154,41 +154,41 @@ p {
 
 p.gold,
 h1.gold {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   color: rgb(236, 201, 3);
 }
 
 p.silver,
 h1.silver {
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: rgb(173, 173, 173);
 }
 
 p.bronze,
 h1.bronze {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: rgb(119, 48, 0);
 }
 
 p.txt,
 h1.txt {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: rgb(247, 243, 231);
 }
 
 h1.trophy {
   top: 70%;
   padding-top: 1em;
-  font-size: 10rem;
+  font-size: 6rem;
 }
 
 .btn {
-  font-family: "Teko", sans-serif;
   width: 10em;
   height: 3em;
   background-color: rgba(143, 59, 42, 0.877);
   border-style: none;
-  font-size: 1.8rem;
+  font-family: "Teko", sans-serif;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   color: rgb(247, 243, 231);
@@ -211,16 +211,19 @@ h1.trophy {
 
 #return {
   position: absolute;
-  top: 2%;
-  right: 2%;
+  top: 86%;
+  right: 3%;
   transform: translateX(0);
   padding: 0.4em;
-  font-size: 4rem;
+  font-size: 2.4rem;
   color: rgb(247, 243, 231);
   cursor: pointer;
 }
 
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background-image: url(../images/background-wall.jpg);
   background-size: cover;
@@ -239,20 +242,21 @@ h1.trophy {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 0;
+  text-align: center;
 }
 .wrapper .game {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 8em 10em 0 10em;
-  width: 100%;
+  justify-content: center;
+  max-width: 70%;
 }
 .wrapper .game .card {
-  flex-basis: 16%;
+  flex-basis: 20%;
   transform: scale(0) rotateY(0);
-  margin: 2em 3em;
-  padding: 8em;
-  border: 3px solid rgb(119, 119, 119);
+  margin: 1em;
+  padding: 2.4em;
+  border: 0.2em solid rgb(119, 119, 119);
   border-radius: 1em;
   box-shadow: 5px 5px 10px;
   background-position: center;
@@ -278,4 +282,63 @@ h1.trophy {
 }
 .wrapper .unvisible {
   display: none;
+}
+
+@media (min-width: 572px) {
+  .wrapper .game .card {
+    padding: 3.6em;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper .game .card {
+    padding: 4.6em;
+  }
+}
+@media (min-width: 1024px) {
+  .wrapper .game .card {
+    padding: 6em;
+  }
+  .mainTitle {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 5.6rem;
+  }
+  h3 {
+    font-size: 4rem;
+  }
+  .btn {
+    font-size: 2.4rem;
+  }
+  #return {
+    font-size: 4rem;
+  }
+  p.gold,
+  h1.gold {
+    font-size: 4rem;
+  }
+  p.silver,
+  h1.silver {
+    font-size: 3.4rem;
+  }
+  p.bronze,
+  h1.bronze {
+    font-size: 2.8rem;
+  }
+  p.txt,
+  h1.txt {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 1024px) and (orientation: portrait) {
+  .wrapper .game .card {
+    margin: 2em;
+    padding: 7em;
+  }
+}
+@media (min-width: 1400px) {
+  .wrapper .game .card {
+    margin: 1.6rem;
+    padding: 8em;
+  }
 }/*# sourceMappingURL=main.css.map */

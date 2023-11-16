@@ -38,26 +38,26 @@ p {
 }
 p.gold,
 h1.gold {
-	font-size: 3.6rem;
+	font-size: 3.2rem;
 	color: variable.$first-place-font-color;
 }
 p.silver,
 h1.silver {
-	font-size: 3rem;
+	font-size: 2.6rem;
 	color: variable.$second-place-font-color;
 }
 p.bronze,
 h1.bronze {
-	font-size: 2.4rem;
+	font-size: 2rem;
 	color: variable.$third-place-font-color;
 }
 p.txt,
 h1.txt {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	color: variable.$main-font-color;
 }
 h1.trophy {
 	top: 70%;
 	padding-top: 1em;
-	font-size: 10rem;
+	font-size: 6rem;
 }

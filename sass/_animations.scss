@@ -1,9 +1,9 @@
 @keyframes titleAnimation {
 	0% {
-		transform: translate(-50%, -50%);
+		top: 50%;
 	}
 	100% {
-		transform: translate(-50%, -250%);
+		top: 10%;
 	}
 }
 .titleAnimation {
