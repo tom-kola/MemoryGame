@@ -4,7 +4,7 @@ let uniqueNumber: number = 0;
 export const idArray: number[] = [];
 export const URLsArray: URL[] = [];
 
-const apiURL: string = `http://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
+const apiURL: string = `https://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
 
 const swap = (array: HTMLElement[], a: number, b: number) => {
 	const holder = array[a];
@@ -36,10 +36,7 @@ export const getDiffrentURLs = () => {
 			});
 	}
 };
-export const removeCardAnimation = (
-	cardsArray: HTMLElement[],
-	time: number
-) => {
+export const removeCardAnimation = (cardsArray: HTMLElement[], time:number) => {
 	return new Promise<void>((resolve) => {
 		setTimeout(() => {
 			cardsArray.forEach((card: HTMLElement) => {

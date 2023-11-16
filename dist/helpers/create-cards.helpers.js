@@ -2,7 +2,7 @@ let id;
 let uniqueNumber = 0;
 export const idArray = [];
 export const URLsArray = [];
-const apiURL = `http://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
+const apiURL = `https://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
 const swap = (array, a, b) => {
     const holder = array[a];
     array[a] = array[b];
