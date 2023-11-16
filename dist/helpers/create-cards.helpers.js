@@ -2,7 +2,7 @@ let id;
 let uniqueNumber = 0;
 export const idArray = [];
 export const URLsArray = [];
-const apiURL = `https://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
+const apiURL = `https://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false]`;
 const swap = (array, a, b) => {
     const holder = array[a];
     array[a] = array[b];
@@ -28,7 +28,7 @@ export const getDiffrentURLs = () => {
         fetch(apiURL)
             .then((responseURL) => responseURL.json())
             .then((responseURL) => {
-            URLsArray.push(responseURL[0]);
+            URLsArray.push(`https://cdn.shibe.online/shibes/${responseURL[0]}.jpg`);
         });
     }
 };

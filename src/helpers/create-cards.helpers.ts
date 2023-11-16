@@ -2,9 +2,9 @@ let id: number;
 let uniqueNumber: number = 0;
 
 export const idArray: number[] = [];
-export const URLsArray: URL[] = [];
+export const URLsArray: string[] = [];
 
-const apiURL: string = `https://shibe.online/api/shibes?count=[${id}]&httpsUrls=[true]`;
+const apiURL: string = `https://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false]`;
 
 const swap = (array: HTMLElement[], a: number, b: number) => {
 	const holder = array[a];
@@ -32,7 +32,7 @@ export const getDiffrentURLs = () => {
 		fetch(apiURL)
 			.then((responseURL) => responseURL.json())
 			.then((responseURL) => {
-				URLsArray.push(responseURL[0]);
+				URLsArray.push(`https://cdn.shibe.online/shibes/${responseURL[0]}.jpg`);
 			});
 	}
 };
