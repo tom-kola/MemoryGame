@@ -2,7 +2,7 @@
 
 Enjoy the Memory Game! Every time you start new game, cards take diffrent locations and images from http://shibe.online. You can see result after each game, and also previous results.
 
-https://tom-kola.github.io/CarServiceApp/
+https://tom-kola.github.io/MemoryGame/
 
 ## The goal
 
@@ -13,8 +13,7 @@ This app was made to improve my JavaScript and TypeScript skills.
 <ul>
 <li>HTML</li>
 <li>SCSS</li>
-<li>JavaScript</li>
-<li>TypeScriptScript</li>
+<li>TypeScript</li>
 </ul>
 
 ## Features
@@ -26,14 +25,14 @@ This app was made to improve my JavaScript and TypeScript skills.
  ## Project screenshots
 
 ### Main view
- <img src="ScreenShots/MainView.png" >
+ <img src="images/ScreenShots/MainView.png" >
 
 ### Game view
- <img src="ScreenShots/GameView.png" >
+ <img src="images/ScreenShots/GameView.png" >
 
 ### Game result
- <img src="ScreenShots/Result.png" >
+ <img src="images/ScreenShots/Result.png" >
 
 ### Previous results
- <img src="ScreenShots/Results.png" >
+ <img src="images/ScreenShots/Results.png" >
  

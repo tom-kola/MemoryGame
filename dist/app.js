@@ -213,7 +213,6 @@ const endTheGame = (time, time2) => {
                 trophy.classList.add(Place.SILVER);
                 break;
             case 2:
-                ;
                 trophy.classList.add(Place.BRONZE);
                 break;
             default:
