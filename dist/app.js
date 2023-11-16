@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Place } from "./types/types.js";
 import { fisherYatesShuffle, idArray, URLsArray, getDiffrentURLs, getUniqueNumberForEachCard, removeCardAnimation, } from "./helpers/create-cards.helpers.js";
 import { compareCardWithTarget, numberOfAttempts, resetAttempsCounter, renderResult, attemptsCounter, attemptsCounterArray, indexesToRemove, } from "./helpers/game-mechanics.helper.js";
-import { titleAnimation, hideButtons, showBackButton, } from "./helpers/interface.helper.js";
+import { titleAnimation, hideButtons, showBackButton, removingEventListeners, addingEventListeners, } from "./helpers/interface.helper.js";
 const menu = document.querySelector(".menu");
 const buttons = document.querySelector(".buttons");
 const newGameBtn = document.querySelector("#newGame");
@@ -47,15 +47,15 @@ const prepareDOMEvents = () => {
 };
 const checkClick = (e) => {
     testNumber = `${e.target.getAttribute("data")}`;
-    // cardsArray.forEach((card) => {
-    // 	card.classList.remove('active')
-    // })
-    if (e.target.getAttribute("data") === testNumber && !e.target.classList.contains('active')) {
-        e.target.classList.add('active');
-        gameMachanics(e);
-    }
-    else if (e.target.classList.contains('active')) {
-        e.target.removeEventListener('click', checkClick(e));
+    if (e.target.classList.contains("card")) {
+        if (e.target.getAttribute("data") === testNumber &&
+            !e.target.classList.contains("active")) {
+            e.target.classList.add("active");
+            gameMachanics(e);
+        }
+        else if (e.target.classList.contains("active")) {
+            e.target.removeEventListener("click", checkClick);
+        }
     }
 };
 export const changeClass = (element, className) => {
@@ -90,6 +90,8 @@ const createNewCards = (time) => {
 };
 const startNewGame = () => __awaiter(void 0, void 0, void 0, function* () {
     getDiffrentURLs();
+    removingEventListeners(newGameBtn, startNewGame);
+    removingEventListeners(resultsBtn, showResult);
     yield titleAnimation(menu);
     yield hideButtons(1000, buttons);
     yield showBackButton(200, returnBtn);
@@ -137,7 +139,7 @@ const compareTwoCards = (array) => {
                 changeClass(card, "rotateCardAgain");
                 setTimeout(() => {
                     changeClass(card, "covered");
-                    card.classList.remove('active');
+                    card.classList.remove("active");
                 }, 500);
                 setTimeout(() => {
                     changeClass(card, "rotateCardAgain");
@@ -205,19 +207,16 @@ const endTheGame = (time, time2) => {
         const actualResult = attemptsCounterArray.length;
         switch (attemptsCounterArray.indexOf(attemptsCounterArray[actualResult - 1])) {
             case 0:
-                // congratsTitle.classList.add(Place.GOLD);
                 trophy.classList.add(Place.GOLD);
                 break;
             case 1:
-                // congratsTitle.classList.add(Place.SILVER);
                 trophy.classList.add(Place.SILVER);
                 break;
             case 2:
-                // congratsTitle.classList.add(Place.BRONZE);
+                ;
                 trophy.classList.add(Place.BRONZE);
                 break;
             default:
-                // congratsTitle.classList.add(Place.OTHER);
                 trophy.classList.add(Place.OTHER);
         }
         resolve();
@@ -241,6 +240,8 @@ const gameMachanics = (e) => __awaiter(void 0, void 0, void 0, function* () {
     yield addRecord();
     yield endTheGame(500, 2000);
     yield startNextGame(5000);
+    addingEventListeners(newGameBtn, startNewGame);
+    addingEventListeners(resultsBtn, showResult);
     setTimeout(() => __awaiter(void 0, void 0, void 0, function* () {
         yield titleAnimation(menu);
     }), 5000);
@@ -262,6 +263,8 @@ const showStatistics = () => {
     });
 };
 const showResult = () => __awaiter(void 0, void 0, void 0, function* () {
+    removingEventListeners(resultsBtn, showResult);
+    removingEventListeners(newGameBtn, startNewGame);
     yield titleAnimation(menu);
     yield hideButtons(1000, buttons);
     yield showBackButton(0, returnBtn);
@@ -274,10 +277,14 @@ const exitGame = () => {
         cardsArray.splice(0, 12);
         faceUpCardsArray.splice(0, 2);
         sectionGame.remove();
+        addingEventListeners(newGameBtn, startNewGame);
+        addingEventListeners(resultsBtn, showResult);
     }
     else if (resultsSection.classList.contains("becomeOpaque")) {
         changeClass(resultsSection, "unvisible");
         changeClass(resultsSection, "becomeOpaque");
+        addingEventListeners(resultsBtn, showResult);
+        addingEventListeners(newGameBtn, startNewGame);
     }
     titleAnimation(menu);
     hideButtons(0, buttons);

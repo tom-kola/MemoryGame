@@ -29,35 +29,41 @@
 		}
 	}
 	.mainTitle {
-		font-size: 6rem;
+		font-size: variable.$main-title-font-size-desktop;
+	}
+	h1 {
+		font-size: variable.$h1-font-size-desktop;
 	}
 	h2 {
-		font-size: 5.6rem;
+		font-size: variable.$h2-font-size-desktop;
 	}
 	h3 {
-		font-size: 4rem;
+		font-size: variable.$h3-font-size-desktop;
 	}
 	.btn {
-		font-size: 2.4rem;
+		font-size: variable.$button-font-size-desktop;
 	}
 	#return {
-		font-size: 4rem;
+		font-size: variable.$return-btn-font-size-desktop;
 	}
 	p.gold,
 	h1.gold {
-		font-size: 4rem;
+		font-size: variable.$gold-font-size-desktop;
 	}
 	p.silver,
 	h1.silver {
-		font-size: 3.4rem;
+		font-size: variable.$silver-font-size-desktop;
 	}
 	p.bronze,
 	h1.bronze {
-		font-size: 2.8rem;
+		font-size: variable.$bronze-font-size-desktop;
 	}
 	p.txt,
 	h1.txt {
-		font-size: 2.4rem;
+		font-size: variable.$txt-font-size-desktop;
+	}
+	h1.trophy {
+		font-size: variable.$trophy-font-size-desktop;
 	}
 }
 @media (min-width: 1024px) and (orientation: portrait) {
@@ -74,7 +80,7 @@
 	.wrapper {
 		.game {
 			.card {
-        margin: 1.6rem;
+				margin: 1.6rem;
 				padding: 8em;
 			}
 		}

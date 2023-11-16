@@ -20,9 +20,9 @@ import {
 	titleAnimation,
 	hideButtons,
 	showBackButton,
+	removingEventListeners,
+	addingEventListeners,
 } from "./helpers/interface.helper.js";
-
-
 
 const menu: HTMLElement = document.querySelector(".menu");
 const buttons: HTMLElement = document.querySelector(".buttons");
@@ -33,7 +33,6 @@ const wrapper: HTMLElement = document.querySelector(".wrapper");
 const resultsSection: HTMLElement = document.querySelector(".resultsSection");
 const placeSection: HTMLElement = document.querySelector(".place");
 const attemptsSection: HTMLElement = document.querySelector(".attempts");
-
 
 const cardsArray: HTMLElement[] = [];
 const faceUpCardsArray: HTMLElement[] = [];
@@ -69,14 +68,16 @@ const prepareDOMEvents = () => {
 
 const checkClick = (e) => {
 	testNumber = `${e.target.getAttribute("data")}`;
-	// cardsArray.forEach((card) => {
-	// 	card.classList.remove('active')
-	// })
-	if (e.target.getAttribute("data") === testNumber && !e.target.classList.contains('active')) {
-		e.target.classList.add('active')
-		gameMachanics(e);
-	} else if(e.target.classList.contains('active')){
-		e.target.removeEventListener('click', checkClick(e))
+	if (e.target.classList.contains("card")) {
+		if (
+			e.target.getAttribute("data") === testNumber &&
+			!e.target.classList.contains("active")
+		) {
+			e.target.classList.add("active");
+			gameMachanics(e);
+		} else if (e.target.classList.contains("active")) {
+			e.target.removeEventListener("click", checkClick);
+		}
 	}
 };
 export const changeClass = (element: HTMLElement, className: string) => {
@@ -114,6 +115,8 @@ const createNewCards = (time: number) => {
 
 const startNewGame = async () => {
 	getDiffrentURLs();
+	removingEventListeners(newGameBtn, startNewGame);
+	removingEventListeners(resultsBtn, showResult);
 	await titleAnimation(menu);
 	await hideButtons(1000, buttons);
 	await showBackButton(200, returnBtn);
@@ -167,7 +170,7 @@ const compareTwoCards = (array: HTMLElement[]) => {
 
 				setTimeout(() => {
 					changeClass(card, "covered");
-					card.classList.remove('active')
+					card.classList.remove("active");
 				}, 500);
 				setTimeout(() => {
 					changeClass(card, "rotateCardAgain");
@@ -178,12 +181,11 @@ const compareTwoCards = (array: HTMLElement[]) => {
 		}
 		numberOfAttempts(faceUpCardsArray);
 		array.splice(0, 2);
-		setTimeout(() =>{
+		setTimeout(() => {
 			if (cardsArray.length === 0) {
 				resolve();
 			}
-		},500)
-		
+		}, 500);
 	});
 };
 
@@ -248,22 +250,18 @@ const endTheGame = (time: number, time2: number) => {
 			attemptsCounterArray.indexOf(attemptsCounterArray[actualResult - 1])
 		) {
 			case 0:
-				// congratsTitle.classList.add(Place.GOLD);
 				trophy.classList.add(Place.GOLD);
 				break;
 
 			case 1:
-				// congratsTitle.classList.add(Place.SILVER);
 				trophy.classList.add(Place.SILVER);
 				break;
 
-			case 2:
-				// congratsTitle.classList.add(Place.BRONZE);
+			case 2;
 				trophy.classList.add(Place.BRONZE);
 				break;
 
 			default:
-				// congratsTitle.classList.add(Place.OTHER);
 				trophy.classList.add(Place.OTHER);
 		}
 		resolve();
@@ -288,6 +286,8 @@ const gameMachanics = async (e) => {
 	await addRecord();
 	await endTheGame(500, 2000);
 	await startNextGame(5000);
+	addingEventListeners(newGameBtn, startNewGame);
+	addingEventListeners(resultsBtn, showResult);
 	setTimeout(async () => {
 		await titleAnimation(menu);
 	}, 5000);
@@ -311,6 +311,8 @@ const showStatistics = () => {
 };
 
 const showResult = async () => {
+	removingEventListeners(resultsBtn, showResult);
+	removingEventListeners(newGameBtn, startNewGame);
 	await titleAnimation(menu);
 	await hideButtons(1000, buttons);
 	await showBackButton(0, returnBtn);
@@ -324,9 +326,13 @@ const exitGame = () => {
 		cardsArray.splice(0, 12);
 		faceUpCardsArray.splice(0, 2);
 		sectionGame.remove();
+		addingEventListeners(newGameBtn, startNewGame);
+		addingEventListeners(resultsBtn, showResult);
 	} else if (resultsSection.classList.contains("becomeOpaque")) {
 		changeClass(resultsSection, "unvisible");
 		changeClass(resultsSection, "becomeOpaque");
+		addingEventListeners(resultsBtn, showResult);
+		addingEventListeners(newGameBtn, startNewGame);
 	}
 	titleAnimation(menu);
 	hideButtons(0, buttons);

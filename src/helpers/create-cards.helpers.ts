@@ -36,7 +36,10 @@ export const getDiffrentURLs = () => {
 			});
 	}
 };
-export const removeCardAnimation = (cardsArray: HTMLElement[], time:number) => {
+export const removeCardAnimation = (
+	cardsArray: HTMLElement[],
+	time: number
+) => {
 	return new Promise<void>((resolve) => {
 		setTimeout(() => {
 			cardsArray.forEach((card: HTMLElement) => {

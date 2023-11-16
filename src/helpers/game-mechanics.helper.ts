@@ -36,13 +36,11 @@ export const renderResult = (
 	if (attemptsCounterArray.length > 0) {
 		for (let i = 0; i < attemptsCounterArray.length; i++) {
 			attemptsCounterArray.sort();
-			if(resultsArray){
+			if (resultsArray) {
 				resultsArray[i].innerText = attemptsCounterArray[i];
-			}else if(titleResult){
+			} else if (titleResult) {
 				titleResult.innerText = attemptsCounterArray[i];
 			}
-			
-			
 		}
 	}
 };

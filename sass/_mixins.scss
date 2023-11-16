@@ -19,7 +19,7 @@
 	background-color: variable.$button-background-color;
 	border-style: none;
 	font-family: variable.$main-font-family;
-	font-size: variable.$button-font-size;
+	font-size: variable.$button-font-size-mobile;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: variable.$main-font-color;
@@ -33,7 +33,7 @@
 	right: 3%;
 	transform: translateX(0);
 	padding: 0.4em;
-	font-size: variable.$return-btn-font-size;
+	font-size: variable.$return-btn-font-size-mobile;
 	color: variable.$main-font-color;
 	cursor: pointer;
 }
@@ -41,7 +41,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	min-height: 100vh;
+	min-height: 100%;
 	width: 100%;
 	background-color: variable.$background-shadow-color;
 }
