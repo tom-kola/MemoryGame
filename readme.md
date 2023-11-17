@@ -1,6 +1,6 @@
 # Car Service App
 
-Enjoy the Memory Game! Every time you start new game, cards take diffrent locations and images from https://shibe.online. You can see result after each game, and also previous results.
+Enjoy the Memory Game! Every time you start new game, cards take diffrent locations and images from https://shibe.online. You can see result after each game, and also previous results. The app is responsive to the most popular resolutions.
 
 https://tom-kola.github.io/MemoryGame/
 

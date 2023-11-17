@@ -68,7 +68,7 @@ const createNewCards = (time) => {
         sectionGame.classList.add("game");
         wrapper.append(sectionGame);
         for (let i = 0; i <= 1; i++) {
-            for (let i = 0; i <= 1; i++) {
+            for (let i = 0; i <= 5; i++) {
                 card = document.createElement("div");
                 card.classList.add("card");
                 card.classList.add("covered");
