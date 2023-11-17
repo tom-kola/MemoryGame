@@ -37,6 +37,7 @@ const attemptsSection: HTMLElement = document.querySelector(".attempts");
 const cardsArray: HTMLElement[] = [];
 const faceUpCardsArray: HTMLElement[] = [];
 const resultsArray: HTMLElement[] = [];
+const sortedAttemptsArray: string[] = [];
 
 const places: Place[] = [Place.GOLD, Place.SILVER, Place.BRONZE, Place.OTHER];
 
@@ -92,7 +93,7 @@ const createNewCards = (time: number) => {
 		wrapper.append(sectionGame);
 
 		for (let i = 0; i <= 1; i++) {
-			for (let i = 0; i <= 5; i++) {
+			for (let i = 0; i <= 2; i++) {
 				card = document.createElement("div");
 				card.classList.add("card");
 				card.classList.add("covered");
@@ -198,6 +199,7 @@ const addRecord = () => {
 		const result = document.createElement("p");
 		result.classList.add("result");
 		attemptsCounterArray.push(attemptsCounter.toString());
+		sortedAttemptsArray.push(attemptsCounter.toString());
 		resultsArray.push(result);
 		attemptsSection.append(result);
 
@@ -241,15 +243,9 @@ const endTheGame = (time: number, time2: number) => {
 
 		const actualResult: number = attemptsCounterArray.length;
 
-		setTimeout(() => {
-			wrapper.append(trophy);
-			congratsTitle.innerText = `Zrobiłeś to w ${
-				attemptsCounterArray[actualResult - 1]
-			} ruchach!`;
-		}, time2);
-		switch (
-			attemptsCounterArray.indexOf(attemptsCounterArray[actualResult - 1])
-		) {
+		sortedAttemptsArray.sort();
+
+		switch (sortedAttemptsArray.indexOf(attemptsCounter.toString())) {
 			case 0:
 				trophy.classList.add(Place.GOLD);
 				break;
@@ -265,7 +261,14 @@ const endTheGame = (time: number, time2: number) => {
 			default:
 				trophy.classList.add(Place.OTHER);
 		}
-		resolve()
+		setTimeout(() => {
+			wrapper.append(trophy);
+			congratsTitle.innerText = `Zrobiłeś to w ${
+				attemptsCounterArray[actualResult - 1]
+			} ruchach!`;
+		}, time2);
+
+		resolve();
 	});
 };
 
@@ -306,7 +309,8 @@ const showStatistics = () => {
 		setTimeout(() => {
 			returnBtn.addEventListener("click", exitGame);
 		}, 600);
-		renderResult(resultsArray)
+		renderResult(resultsArray);
+		console.log("Tworzę klasyfikację");
 		resolve();
 	});
 };

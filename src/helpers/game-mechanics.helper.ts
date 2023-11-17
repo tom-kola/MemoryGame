@@ -30,10 +30,10 @@ export const resetAttempsCounter = () => {
 	attemptsCounter = 0;
 };
 export const renderResult = (resultsArray: HTMLElement[]) => {
-	if (attemptsCounterArray.length > 0) {
-		for (let i = 0; i < attemptsCounterArray.length; i++) {
-			attemptsCounterArray.sort();
-			resultsArray[i].innerText = attemptsCounterArray[i];
+	const sortedAttemptsArray = attemptsCounterArray.sort();
+	if (sortedAttemptsArray.length > 0) {
+		for (let i = 0; i < sortedAttemptsArray.length; i++) {
+			resultsArray[i].innerText = sortedAttemptsArray[i];
 		}
 	}
 };
