@@ -29,18 +29,11 @@ export const numberOfAttempts = (faceUpCardsArray: HTMLElement[]) => {
 export const resetAttempsCounter = () => {
 	attemptsCounter = 0;
 };
-export const renderResult = (
-	resultsArray?: HTMLElement[],
-	titleResult?: HTMLElement
-) => {
+export const renderResult = (resultsArray: HTMLElement[]) => {
 	if (attemptsCounterArray.length > 0) {
 		for (let i = 0; i < attemptsCounterArray.length; i++) {
 			attemptsCounterArray.sort();
-			if (resultsArray) {
-				resultsArray[i].innerText = attemptsCounterArray[i];
-			} else if (titleResult) {
-				titleResult.innerText = attemptsCounterArray[i];
-			}
+			resultsArray[i].innerText = attemptsCounterArray[i];
 		}
 	}
 };

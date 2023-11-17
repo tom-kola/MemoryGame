@@ -92,7 +92,7 @@ const createNewCards = (time: number) => {
 		wrapper.append(sectionGame);
 
 		for (let i = 0; i <= 1; i++) {
-			for (let i = 0; i <= 5; i++) {
+			for (let i = 0; i <= 1; i++) {
 				card = document.createElement("div");
 				card.classList.add("card");
 				card.classList.add("covered");
@@ -239,13 +239,14 @@ const endTheGame = (time: number, time2: number) => {
 		trophy.classList.add("trophy");
 		trophy.innerHTML = '<i class="fa-solid fa-trophy"></i>';
 
+		const actualResult: number = attemptsCounterArray.length;
+
 		setTimeout(() => {
 			wrapper.append(trophy);
 			congratsTitle.innerText = `Zrobiłeś to w ${
 				attemptsCounterArray[actualResult - 1]
 			} ruchach!`;
 		}, time2);
-		const actualResult: number = attemptsCounterArray.length;
 		switch (
 			attemptsCounterArray.indexOf(attemptsCounterArray[actualResult - 1])
 		) {
@@ -264,7 +265,7 @@ const endTheGame = (time: number, time2: number) => {
 			default:
 				trophy.classList.add(Place.OTHER);
 		}
-		resolve();
+		resolve()
 	});
 };
 
@@ -305,7 +306,7 @@ const showStatistics = () => {
 		setTimeout(() => {
 			returnBtn.addEventListener("click", exitGame);
 		}, 600);
-		renderResult(resultsArray);
+		renderResult(resultsArray)
 		resolve();
 	});
 };

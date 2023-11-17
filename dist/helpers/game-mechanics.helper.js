@@ -22,16 +22,11 @@ export const numberOfAttempts = (faceUpCardsArray) => {
 export const resetAttempsCounter = () => {
     attemptsCounter = 0;
 };
-export const renderResult = (resultsArray, titleResult) => {
+export const renderResult = (resultsArray) => {
     if (attemptsCounterArray.length > 0) {
         for (let i = 0; i < attemptsCounterArray.length; i++) {
             attemptsCounterArray.sort();
-            if (resultsArray) {
-                resultsArray[i].innerText = attemptsCounterArray[i];
-            }
-            else if (titleResult) {
-                titleResult.innerText = attemptsCounterArray[i];
-            }
+            resultsArray[i].innerText = attemptsCounterArray[i];
         }
     }
 };

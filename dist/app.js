@@ -68,7 +68,7 @@ const createNewCards = (time) => {
         sectionGame.classList.add("game");
         wrapper.append(sectionGame);
         for (let i = 0; i <= 1; i++) {
-            for (let i = 0; i <= 5; i++) {
+            for (let i = 0; i <= 1; i++) {
                 card = document.createElement("div");
                 card.classList.add("card");
                 card.classList.add("covered");
@@ -200,11 +200,11 @@ const endTheGame = (time, time2) => {
         trophy.classList.add("congratsTitle");
         trophy.classList.add("trophy");
         trophy.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+        const actualResult = attemptsCounterArray.length;
         setTimeout(() => {
             wrapper.append(trophy);
             congratsTitle.innerText = `Zrobiłeś to w ${attemptsCounterArray[actualResult - 1]} ruchach!`;
         }, time2);
-        const actualResult = attemptsCounterArray.length;
         switch (attemptsCounterArray.indexOf(attemptsCounterArray[actualResult - 1])) {
             case 0:
                 trophy.classList.add(Place.GOLD);
