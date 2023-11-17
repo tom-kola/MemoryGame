@@ -17,22 +17,26 @@ This app was made to improve my JavaScript and TypeScript skills.
 </ul>
 
 ## Features
+
  <ul>
  <li>Play the Memory Game and enjoy!</li>
  <li>See your results</li>
  </ul>
 
- ## Project screenshots
+## Project screenshots
 
 ### Main view
+
  <img src="images/ScreenShots/MainView.png" >
 
 ### Game view
+
  <img src="images/ScreenShots/GameView.png" >
 
 ### Game result
+
  <img src="images/ScreenShots/Result.png" >
 
 ### Previous results
+
  <img src="images/ScreenShots/Results.png" >
- 

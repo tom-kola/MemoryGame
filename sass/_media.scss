@@ -2,19 +2,18 @@
 @use "./variables" as variable;
 @use "./mainview" as *;
 
-@media(orientation:landscape){
-  .wrapper{
-    .game{
-      .card{
-        flex-basis: 21%;
-      }
-    }
-  }
+@media (orientation: landscape) {
+	.wrapper {
+		.game {
+			.card {
+				flex-basis: 21%;
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-	
-  .mainTitle {
+	.mainTitle {
 		font-size: variable.$main-title-font-size-desktop;
 	}
 	h1 {
