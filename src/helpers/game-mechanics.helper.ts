@@ -1,4 +1,5 @@
 let index: number;
+
 export let attemptsCounter: number = 0;
 
 export const indexesToRemove: number[] = [];

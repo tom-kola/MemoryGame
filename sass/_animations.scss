@@ -1,17 +1,6 @@
-@keyframes titleAnimation {
+@keyframes cards-animation {
 	0% {
-		top: 50%;
-	}
-	100% {
-		top: 10%;
-	}
-}
-.titleAnimation {
-	animation: titleAnimation 1s linear 1 both;
-}
-@keyframes cardsAnimation {
-	0% {
-		transform: scale(0);
+		transform: scale(0.2);
 	}
 	70% {
 		transform: scale(1.05);
@@ -23,10 +12,10 @@
 		transform: scale(1);
 	}
 }
-.cardAnimation {
-	animation: cardsAnimation 1s ease 1 both;
+.cards-animation {
+	animation: cards-animation 0.4s ease 1 both;
 }
-@keyframes rotateCard {
+@keyframes rotate-card {
 	0% {
 		transform: rotateY(0);
 	}
@@ -40,10 +29,14 @@
 		transform: rotateY(180deg) scale(-1, 1);
 	}
 }
-.rotateCard {
-	animation: rotateCard 1s linear 1 both;
+.rotate-card {
+	animation: rotate-card 0.3s linear 1 both;
+	background-image: url("../images/empty.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
-@keyframes rotateCardAgain {
+@keyframes rotate-card-again {
 	0% {
 		transform: rotateY(180deg) scale(-1, 1);
 	}
@@ -57,10 +50,10 @@
 		transform: rotateY(0);
 	}
 }
-.rotateCardAgain {
-	animation: rotateCardAgain 1s linear 1 both;
+.rotate-card-again {
+	animation: rotate-card-again 0.4s linear 1 both;
 }
-@keyframes becomeTransparent {
+@keyframes become-transparent {
 	0% {
 		opacity: 1;
 	}
@@ -68,31 +61,32 @@
 		opacity: 0;
 	}
 }
-.becomeTransparent {
-	animation: becomeTransparent 0.5s linear 1 both;
+.become-transparent {
+	animation: become-transparent 0.2s linear 1 both;
 }
-.becomeOpaque {
-	animation: becomeTransparent 0.3s linear 1 reverse both;
+.become-opaque {
+	animation: become-transparent 0.3s linear 1 reverse both;
 }
-@keyframes congratsTitleAnimation {
+@keyframes congrats-animation {
 	0% {
-		transform: translate(-50%, -50%) scale(0);
+		transform: scale(0.6);
+		opacity: 1;
+	}
+	30% {
+		transform: scale(1);
+	}
+	90% {
+		opacity: 1;
 	}
 	100% {
-		transform: translate(-50%, -50%) scale(1);
+		transform: scale(1);
+		opacity: 0;
 	}
-}
-@keyframes returnBtnAnimation {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-70%);
-	}
-}
-#return:hover .fa-left-long {
-	animation: returnBtnAnimation 0.6s linear 1 both;
 }
 .covered {
-	background-image: url(../images/card-pattern3.jpg) !important;
+	background-image: url(../images/card-pattern3.webp) !important;
+}
+.title-animation {
+	opacity: 0;
+	transition: 0.3s;
 }

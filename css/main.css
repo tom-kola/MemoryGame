@@ -4,21 +4,9 @@
   box-sizing: border-box;
 }
 
-@keyframes titleAnimation {
+@keyframes cards-animation {
   0% {
-    top: 50%;
-  }
-  100% {
-    top: 10%;
-  }
-}
-.titleAnimation {
-  animation: titleAnimation 1s linear 1 both;
-}
-
-@keyframes cardsAnimation {
-  0% {
-    transform: scale(0);
+    transform: scale(0.2);
   }
   70% {
     transform: scale(1.05);
@@ -30,11 +18,11 @@
     transform: scale(1);
   }
 }
-.cardAnimation {
-  animation: cardsAnimation 1s ease 1 both;
+.cards-animation {
+  animation: cards-animation 0.4s ease 1 both;
 }
 
-@keyframes rotateCard {
+@keyframes rotate-card {
   0% {
     transform: rotateY(0);
   }
@@ -48,11 +36,15 @@
     transform: rotateY(180deg) scale(-1, 1);
   }
 }
-.rotateCard {
-  animation: rotateCard 1s linear 1 both;
+.rotate-card {
+  animation: rotate-card 0.3s linear 1 both;
+  background-image: url("../images/empty.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@keyframes rotateCardAgain {
+@keyframes rotate-card-again {
   0% {
     transform: rotateY(180deg) scale(-1, 1);
   }
@@ -66,11 +58,11 @@
     transform: rotateY(0);
   }
 }
-.rotateCardAgain {
-  animation: rotateCardAgain 1s linear 1 both;
+.rotate-card-again {
+  animation: rotate-card-again 0.4s linear 1 both;
 }
 
-@keyframes becomeTransparent {
+@keyframes become-transparent {
   0% {
     opacity: 1;
   }
@@ -78,36 +70,37 @@
     opacity: 0;
   }
 }
-.becomeTransparent {
-  animation: becomeTransparent 0.5s linear 1 both;
+.become-transparent {
+  animation: become-transparent 0.2s linear 1 both;
 }
 
-.becomeOpaque {
-  animation: becomeTransparent 0.3s linear 1 reverse both;
+.become-opaque {
+  animation: become-transparent 0.3s linear 1 reverse both;
 }
 
-@keyframes congratsTitleAnimation {
+@keyframes congrats-animation {
   0% {
-    transform: translate(-50%, -50%) scale(0);
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
+    opacity: 0;
   }
 }
-@keyframes returnBtnAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-70%);
-  }
-}
-#return:hover .fa-left-long {
-  animation: returnBtnAnimation 0.6s linear 1 both;
-}
-
 .covered {
-  background-image: url(../images/card-pattern3.jpg) !important;
+  background-image: url(../images/card-pattern3.webp) !important;
+}
+
+.title-animation {
+  opacity: 0;
+  transition: 0.3s;
 }
 
 html {
@@ -115,59 +108,64 @@ html {
   font-size: 62.5%;
 }
 
-h1 {
-  font-size: 3.9rem;
+h1,
+h2,
+h3 {
   color: rgb(247, 243, 231);
+}
+
+.start--title {
+  font-family: "Holtwood One SC", serif;
+  font-size: 3rem;
   text-align: center;
 }
 
 h2 {
   padding-top: 2.6em;
-  font-size: 3.4rem;
-  color: rgb(247, 243, 231);
+  font-size: 3rem;
 }
 
 h3 {
   padding: 0.5em;
-  font-size: 2rem;
-  color: rgb(247, 243, 231);
+  font-size: 1.8rem;
+}
+
+.congrats-title,
+.moves-title {
+  font-size: 3rem;
+  transform: scale(0);
+  animation: congrats-animation 2s ease-in-out 1 both;
+}
+
+.moves-title {
+  animation-duration: 3s;
 }
 
 p {
-  padding: 0.3em;
+  padding: 0.4em;
   text-align: center;
-  font-weight: 700;
-}
-
-.mainTitle {
-  font-family: "Holtwood One SC", serif;
-  font-size: 3.9rem;
-}
-
-.congratsTitle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: congratsTitleAnimation 1s ease-in-out 1 both;
+  text-transform: uppercase;
 }
 
 p.gold,
 h1.gold {
   font-size: 3.2rem;
   color: rgb(236, 201, 3);
+  font-weight: 700;
 }
 
 p.silver,
 h1.silver {
   font-size: 2.6rem;
   color: rgb(173, 173, 173);
+  font-weight: 700;
 }
 
 p.bronze,
 h1.bronze {
   font-size: 2rem;
   color: rgb(119, 48, 0);
+  font-weight: 700;
 }
 
 p.txt,
@@ -177,141 +175,56 @@ h1.txt {
 }
 
 h1.trophy {
-  top: 70%;
   padding-top: 1em;
-  font-size: 6rem;
+  font-size: 4.6rem;
 }
 
-.btn {
-  width: 10em;
-  height: 3em;
-  background-color: rgba(143, 59, 42, 0.877);
-  border-style: none;
-  font-family: "Teko", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: rgb(247, 243, 231);
-  opacity: 1;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: rgb(102, 42, 30);
-}
-
-#newGame {
-  margin-right: 0.5em;
-}
-
-#results {
-  margin-left: 0.5em;
-}
-
-#return {
-  position: absolute;
-  top: 86%;
-  right: 3%;
-  transform: translateX(0);
-  padding: 0.4em;
-  font-size: 2.4rem;
-  color: rgb(247, 243, 231);
-  cursor: pointer;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url(../images/background-wall.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.wrapper .backgroundShadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.wrapper .menu {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding-bottom: 0;
-  text-align: center;
-}
-.wrapper .game {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90%;
-  max-width: 1024px;
-  max-height: 700px;
-  height: 70vh;
-}
-.wrapper .game .card {
-  flex-basis: 26%;
-  transform: scale(0) rotateY(0);
-  margin: 1em;
-  max-width: 200px;
-  max-height: 200px;
-  border: 0.2em solid rgb(119, 119, 119);
-  border-radius: 1em;
-  box-shadow: 5px 5px 10px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.wrapper .resultsSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0;
-}
-.wrapper .resultsSection .statistics {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.wrapper .hidden {
-  visibility: hidden;
-}
-.wrapper .unvisible {
-  display: none;
-}
-
-@media (orientation: landscape) {
-  .wrapper .game .card {
-    flex-basis: 21%;
+@media (min-width: 760px) {
+  .start--title {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3.4rem;
+  }
+  h3 {
+    font-size: 2.2rem;
+  }
+  .congrats-title.moves-title {
+    font-size: 3.6rem;
+  }
+  p.gold,
+  h1.gold {
+    font-size: 3.6rem;
+  }
+  p.silver,
+  h1.silver {
+    font-size: 3rem;
+  }
+  p.bronze,
+  h1.bronze {
+    font-size: 2.4rem;
+  }
+  p.txt,
+  h1.txt {
+    font-size: 1.8rem;
+  }
+  h1.trophy {
+    font-size: 5.6rem;
   }
 }
-@media (min-width: 1024px) {
-  .mainTitle {
-    font-size: 6rem;
-  }
-  h1 {
+@media (min-width: 1200px) {
+  .start--title {
     font-size: 5rem;
   }
   h2 {
-    font-size: 5.6rem;
+    font-size: 4.6rem;
   }
   h3 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
-  .btn {
-    font-size: 1.8rem;
-  }
-  #return {
-    font-size: 4rem;
+  .congrats-title,
+  .moves-title {
+    font-size: 4.6rem;
   }
   p.gold,
   h1.gold {
@@ -330,6 +243,141 @@ h1.trophy {
     font-size: 2.4rem;
   }
   h1.trophy {
-    font-size: 10rem;
+    font-size: 6.6rem;
   }
+}
+.start__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start__buttons .start__buttons--btn {
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  background-image: linear-gradient(rgba(205, 103, 230, 0.747), rgba(83, 0, 83, 0.5) 50%);
+  border: none;
+  border-radius: 42px;
+  box-shadow: rgba(205, 103, 230, 0.637) 4px 2px 6px, rgba(156, 2, 156, 0.5) 0 8px 12px;
+  font-family: "Teko", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(247, 243, 231);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+@media (min-width: 760px) {
+  .start__buttons .start__buttons--btn {
+    width: 120px;
+    height: 35px;
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .start__buttons .start__buttons--btn {
+    width: 140px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .start__buttons .start__buttons--btn:hover {
+    background-color: rgb(150, 1, 150);
+    box-shadow: rgba(205, 103, 230, 0.637) 4px 2px 20px, rgba(156, 2, 156, 0.5) 0 8px 12px;
+    color: rgb(255, 145, 0);
+  }
+}
+
+#new-game {
+  margin-right: 0.5em;
+}
+
+#results {
+  margin-left: 0.5em;
+}
+
+#return {
+  padding: 0 0.5em;
+  font-size: 2rem;
+  color: rgb(247, 243, 231);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  #return {
+    font-size: 4rem;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#280028 10%, #470047);
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+main .game {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 1000px;
+  height: 100%;
+  max-height: 600px;
+}
+main .game .card {
+  flex: 1 1 20%;
+  flex-grow: 1;
+  transform: scale(0) rotateY(0);
+  margin: 1.2em;
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 180px;
+  max-height: 180px;
+  border: 0.2em solid rgb(119, 119, 119);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.resultsSection .statistics {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menu__exit {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.unvisible {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

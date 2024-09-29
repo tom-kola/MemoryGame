@@ -15,7 +15,7 @@ export const addingEventListeners = (element: HTMLElement, listener: any) => {
 
 export const titleAnimation = (menu: HTMLElement) => {
 	return new Promise<void>((resolve) => {
-		changeClass(menu, "titleAnimation");
+		changeClass(menu, "title-animation");
 		resolve();
 	});
 };
@@ -23,8 +23,8 @@ export const titleAnimation = (menu: HTMLElement) => {
 export const hideButtons = (time: number, buttons: HTMLElement) => {
 	return new Promise<void>((resolve) => {
 		setTimeout(() => {
-			changeClass(buttons, "becomeTransparent");
-			changeClass(buttons, "hidden");
+			changeClass(buttons, "become-transparent");
+			changeClass(buttons, "unvisible");
 			resolve();
 		}, time);
 	});

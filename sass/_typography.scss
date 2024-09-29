@@ -1,63 +1,133 @@
-@use "./variables" as variable;
+@use "./variables" as *;
 @use "./animations" as *;
 
 html {
-	font-family: variable.$main-font-family;
+	font-family: $main-font-family;
 	font-size: 62.5%;
 }
-h1 {
-	font-size: variable.$h1-font-size-mobile;
-	color: variable.$main-font-color;
+h1,
+h2,
+h3 {
+	color: $main-font-color;
+}
+.start--title {
+	font-family: $main-title-font-family;
+	font-size: 3rem;
 	text-align: center;
 }
 h2 {
 	padding-top: 2.6em;
-	font-size: variable.$h2-font-size-mobile;
-	color: variable.$main-font-color;
+	font-size: 3rem;
 }
 h3 {
 	padding: 0.5em;
-	font-size: variable.$h3-font-size-mobile;
-	color: variable.$main-font-color;
+	font-size: 1.8rem;
+}
+.congrats-title,
+.moves-title {
+	font-size: 3rem;
+	transform: scale(0);
+	animation: congrats-animation 2s ease-in-out 1 both;
+}
+.moves-title {
+	animation-duration: 3s;
 }
 p {
-	padding: 0.3em;
+	padding: 0.4em;
 	text-align: center;
-	font-weight: 700;
-}
-.mainTitle {
-	font-family: variable.$main-title-font-family;
-	font-size: variable.$main-title-font-size-mobile;
-}
-.congratsTitle {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	animation: congratsTitleAnimation 1s ease-in-out 1 both;
+	text-transform: uppercase;
 }
 p.gold,
 h1.gold {
-	font-size: variable.$gold-font-size-mobile;
-	color: variable.$first-place-font-color;
+	font-size: 3.2rem;
+	color: $first-place-font-color;
+	font-weight: 700;
 }
 p.silver,
 h1.silver {
-	font-size: variable.$silver-font-size-mobile;
-	color: variable.$second-place-font-color;
+	font-size: 2.6rem;
+	color: $second-place-font-color;
+	font-weight: 700;
 }
 p.bronze,
 h1.bronze {
-	font-size: variable.$bronze-font-size-mobile;
-	color: variable.$third-place-font-color;
+	font-size: 2rem;
+	color: $third-place-font-color;
+	font-weight: 700;
 }
 p.txt,
 h1.txt {
-	font-size: variable.$txt-font-size-mobile;
-	color: variable.$main-font-color;
+	font-size: 1.6rem;
+	color: $main-font-color;
 }
 h1.trophy {
-	top: 70%;
 	padding-top: 1em;
-	font-size: variable.$trophy-font-size-mobile;
+	font-size: 4.6rem;
+}
+@media (min-width: 760px) {
+	.start--title {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 3.4rem;
+	}
+	h3 {
+		font-size: 2.2rem;
+	}
+	.congrats-title.moves-title {
+		font-size: 3.6rem;
+	}
+	p.gold,
+	h1.gold {
+		font-size: 3.6rem;
+	}
+	p.silver,
+	h1.silver {
+		font-size: 3rem;
+	}
+	p.bronze,
+	h1.bronze {
+		font-size: 2.4rem;
+	}
+	p.txt,
+	h1.txt {
+		font-size: 1.8rem;
+	}
+	h1.trophy {
+		font-size: 5.6rem;
+	}
+}
+@media (min-width: 1200px) {
+	.start--title {
+		font-size: 5rem;
+	}
+	h2 {
+		font-size: 4.6rem;
+	}
+	h3 {
+		font-size: 3rem;
+	}
+	.congrats-title,
+	.moves-title {
+		font-size: 4.6rem;
+	}
+	p.gold,
+	h1.gold {
+		font-size: 4rem;
+	}
+	p.silver,
+	h1.silver {
+		font-size: 3.4rem;
+	}
+	p.bronze,
+	h1.bronze {
+		font-size: 2.8rem;
+	}
+	p.txt,
+	h1.txt {
+		font-size: 2.4rem;
+	}
+	h1.trophy {
+		font-size: 6.6rem;
+	}
 }

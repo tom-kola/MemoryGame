@@ -13,15 +13,15 @@ export const addingEventListeners = (element, listener) => {
 };
 export const titleAnimation = (menu) => {
     return new Promise((resolve) => {
-        changeClass(menu, "titleAnimation");
+        changeClass(menu, "title-animation");
         resolve();
     });
 };
 export const hideButtons = (time, buttons) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            changeClass(buttons, "becomeTransparent");
-            changeClass(buttons, "hidden");
+            changeClass(buttons, "become-transparent");
+            changeClass(buttons, "unvisible");
             resolve();
         }, time);
     });

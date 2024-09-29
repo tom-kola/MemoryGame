@@ -1,13 +1,16 @@
-@use "./variables" as variable;
+@use "./variables" as *;
 
 @mixin card {
-	flex-basis: 26%;
+	flex: 1 1 20%;
+	flex-grow: 1;
 	transform: scale(0) rotateY(0);
-	margin: 1em;
-	max-width: 200px;
-	max-height: 200px;
-	border: 0.2em solid variable.$card-border-color;
-	border-radius: 1em;
+	margin: 1.2em;
+	min-width: 60px;
+	min-height: 60px;
+	max-width: 180px;
+	max-height: 180px;
+	border: 0.2em solid rgb(119, 119, 119);
+	border-radius: 5px;
 	box-shadow: 5px 5px 10px;
 	background-position: center;
 	background-size: cover;
@@ -15,34 +18,45 @@
 	cursor: pointer;
 }
 @mixin button {
-	width: 10em;
-	height: 3em;
-	background-color: variable.$button-background-color;
-	border-style: none;
-	font-family: variable.$main-font-family;
-	font-size: variable.$button-font-size-mobile;
+	width: 100px;
+	height: 30px;
+	background-color: transparent;
+	background-image: linear-gradient(
+		rgba(205, 103, 230, 0.747),
+		rgba(83, 0, 83, 0.5) 50%
+	);
+	border: none;
+	border-radius: 42px;
+	box-shadow: rgba(205, 103, 230, 0.637) 4px 2px 6px,
+		rgba(156, 2, 156, 0.5) 0 8px 12px;
+	font-family: $main-font-family;
+	font-size: 1.2rem;
 	text-transform: uppercase;
 	font-weight: 700;
-	color: variable.$main-font-color;
-	opacity: 1;
+	color: $main-font-color;
 	cursor: pointer;
-	transition: 0.3s;
+	transition-duration: 0.2s;
+
+	@media (min-width: 760px) {
+		width: 120px;
+		height: 35px;
+		font-size: 1.4rem;
+	}
+
+	@media (min-width: 1200px) {
+		width: 140px;
+		height: 40px;
+		font-size: 1.6rem;
+	}
 }
 @mixin returnBtn {
-	position: absolute;
-	top: 86%;
-	right: 3%;
-	transform: translateX(0);
-	padding: 0.4em;
-	font-size: variable.$return-btn-font-size-mobile;
-	color: variable.$main-font-color;
+	padding: 0 0.5em;
+	font-size: 2rem;
+	color: $main-font-color;
+	text-transform: uppercase;
 	cursor: pointer;
-}
-@mixin backgroundShadow {
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-height: 100%;
-	width: 100%;
-	background-color: variable.$background-shadow-color;
+
+	@media (min-width: 1200px) {
+		font-size: 4rem;
+	}
 }

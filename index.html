@@ -14,14 +14,12 @@
 		></script>
 		<link rel="stylesheet" href="./css/main.css" />
 	</head>
-	<body>
-		<div class="wrapper">
-			<div class="backgroundShadow"></div>
-			<section class="menu">
-				<h1 class="mainTitle">Memory</h1>
-				<div class="buttons">
-					<button class="btn" id="newGame">Nowa gra</button>
-					<button class="btn" id="results">Wyniki</button>
+	<main>
+			<section class="menu__start">
+				<h1 class="start--title">Memory</h1>
+				<div class="start__buttons">
+					<button class="start__buttons--btn" id="new-game">Nowa gra</button>
+					<button class="start__buttons--btn" id="results">Wyniki</button>
 				</div>
 			</section>
 			<section class="resultsSection unvisible">
@@ -35,10 +33,12 @@
 					</div>
 				</div>
 			</section>
+		</main>
+		<section class="menu__exit">
 			<p class="unvisible" id="return">
-				<i class="fa-solid fa-left-long"></i>
+				wstecz
 			</p>
-		</div>
+		</section>	
 		<script type="module" src="./dist/app.js"></script>
 	</body>
 </html>
