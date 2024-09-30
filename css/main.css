@@ -59,7 +59,7 @@
   }
 }
 .rotate-card-again {
-  animation: rotate-card-again 0.4s linear 1 both;
+  animation: rotate-card-again 0.3s linear 1 both;
 }
 
 @keyframes become-transparent {
