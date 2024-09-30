@@ -1,12 +1,12 @@
-# Car Service App
+# Memory Game
 
-Enjoy the Memory Game! Every time you start new game, cards take diffrent locations and images from https://shibe.online. You can see result after each game, and also previous results. The app is responsive to the most popular resolutions.
+Enjoy the Memory Game! Every time you start new game, cards take diffrent locations and images from The Art Institute of Chicago's API https://api.artic.edu/docs/. You can see result after each game, and also previous results. The app is responsive to the most popular resolutions.
 
-https://tom-kola.github.io/MemoryGame/
+https://memorygame.tomkola.pl
 
 ## The goal
 
-This app was made to improve my JavaScript and TypeScript skills.
+This app was made to show my JavaScript and TypeScript skills.
 
 ## Built with
 
