@@ -99,9 +99,9 @@ const checkURLsArrayLength = () => {
     if (URLsArray.length === 6) {
         createNewCards();
         removeCardAnimation(cardsArray, 1000);
+        clearInterval(URLsArrayLength);
         titleAnimation(menuStart);
         showBackButton(0, returnBtn);
-        clearInterval(URLsArrayLength);
     }
 };
 const startNewGame = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -110,7 +110,7 @@ const startNewGame = () => __awaiter(void 0, void 0, void 0, function* () {
     removingEventListeners(newGameBtn, startNewGame);
     removingEventListeners(resultsBtn, showResult);
     yield titleAnimation(menuStart);
-    yield hideButtons(200, buttons);
+    yield hideButtons(400, buttons);
     URLsArrayLength = setInterval(checkURLsArrayLength, 500);
 });
 const revealTheCard = (card, time) => {
@@ -184,7 +184,7 @@ const compareTwoCards = (array) => {
 const gameMechanics = (e) => __awaiter(void 0, void 0, void 0, function* () {
     if (isGameExited)
         return;
-    const array = yield revealTheCard(e.target, 1100);
+    const array = yield revealTheCard(e.target, 500);
     yield compareTwoCards(array);
 });
 const addRecord = () => {

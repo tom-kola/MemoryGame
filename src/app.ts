@@ -122,9 +122,9 @@ const checkURLsArrayLength = () => {
 	if (URLsArray.length === 6) {
 		createNewCards();
 		removeCardAnimation(cardsArray, 1000);
+		clearInterval(URLsArrayLength);
 		titleAnimation(menuStart);
 		showBackButton(0, returnBtn);
-		clearInterval(URLsArrayLength);
 	}
 };
 
@@ -134,7 +134,7 @@ const startNewGame = async () => {
 	removingEventListeners(newGameBtn, startNewGame);
 	removingEventListeners(resultsBtn, showResult);
 	await titleAnimation(menuStart);
-	await hideButtons(200, buttons);
+	await hideButtons(400, buttons);
 	URLsArrayLength = setInterval(checkURLsArrayLength, 500);
 };
 
@@ -219,7 +219,7 @@ const compareTwoCards = (array: HTMLElement[]) => {
 const gameMechanics = async (e) => {
 	if (isGameExited) return;
 
-	const array = await revealTheCard(e.target, 1100);
+	const array = await revealTheCard(e.target, 500);
 	await compareTwoCards(array);
 };
 
